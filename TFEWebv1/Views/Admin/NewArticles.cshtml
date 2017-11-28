@@ -1,7 +1,8 @@
-
+@model TFEWebv1.Models.AdminViewModels.RegisterArticlesViewModel
 @{
     ViewData["Title"] = "NewArticles";
 }
+<script src="//rubaxa.github.io/Sortable/Sortable.js"></script>
     <nav class="navbar navbar-default sidebar downwiththesickness" role="navigation">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -35,4 +36,10 @@
 </nav>
 <div class="canvas" id="dropit">
     <span>Ekko</span>
+    <form asp-controller="Admin" asp-action="Register" method="post">
+        @*<label asp-for=""></label>
+        <input asp-for="" type="text" />*@
+        <ul id="dropitdown"></ul>
+        <input type="submit" />
+    </form>
 </div>

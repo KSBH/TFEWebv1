@@ -7,14 +7,14 @@ document.querySelector('#dropit').addEventListener('drop', function (e) {
     var data1 = e.currentTarget.id;
     console.log(data);
     if (data == "titledrag") {
-        var txt = document.createElement("h1");
-        txt.innerHTML = "<input type='text' />";
-        $("#dropit").append(txt).fadeIn();
+        var txt = document.createElement("li");
+        txt.innerHTML = "foo<h1><input type='text' /></h1>";
+        $("#dropitdown").append(txt).fadeIn();
     }
     else if (data == "paradrag") {
-        var txt2 = document.createElement('p');
-        txt2.innerHTML = "<input type='text'>";
-        $("#dropit").append(txt2).fadeIn();
+        var txt2 = document.createElement('li');
+        txt2.innerHTML = "<p><input type='text' /></p>";
+        $("#dropitdown").append(txt2).fadeIn();
     }
 
 });
@@ -25,7 +25,8 @@ Array.from(dragitup).forEach(link => {
         console.log(e.target.id);
     });
 });
-
+var sortitout = document.getElementById('dropitdown');
+var sortable = Sortable.create(sortitout);
 //document.querySelectorAll('.dragit').addEventListener('dragstart', function (e) {
 //    e.preventDefault();
 //    e.dataTransfer.setData('text', e.target.id);
