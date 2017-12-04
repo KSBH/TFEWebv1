@@ -23,5 +23,6 @@ namespace TFEWebv1.Data
             // Add your customizations after calling base.OnModelCreating(builder);
         }
         public DbSet<Articles> Articles { get; set; }
+        public DbSet<TFEWebv1.Models.ScriptElements> ScriptElements { get; set; }
     }
 }

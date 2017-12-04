@@ -39,7 +39,11 @@
     <form asp-controller="Admin" asp-action="Register" method="post">
         @*<label asp-for=""></label>
         <input asp-for="" type="text" />*@
-        <ul id="dropitdown"></ul>
-        <input type="submit" />
+        <input type="text" asp-for="Name" placeholder="Nom de l&apos;article"/>
+        <input type="text" asp-for="Description" placeholder="Description" />
+        <ul id='dropitdown'></ul>
+        <input type="hidden" asp-for="Content" value="" id="stringHtml" name="Content" />
+        <input type='submit' />
     </form>
+    <button onclick="doit()">show</button>
 </div>

@@ -27,6 +27,12 @@ Array.from(dragitup).forEach(link => {
 });
 var sortitout = document.getElementById('dropitdown');
 var sortable = Sortable.create(sortitout);
+function doit() {
+    var htmlToString = document.getElementById('dropitdown').innerHTML;
+    document.getElementById('stringHtml').value = htmlToString;
+    var ekko = "";
+}
+
 //document.querySelectorAll('.dragit').addEventListener('dragstart', function (e) {
 //    e.preventDefault();
 //    e.dataTransfer.setData('text', e.target.id);
