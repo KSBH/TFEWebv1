@@ -1,4 +1,15 @@
 ﻿// Write your Javascript code.
+//Tool to create article and tutorials
+var chipit = document.querySelectorAll(".chips");
+Array.from(chipit).forEach(link => {
+    link.addEventListener('click', function () {
+        var show = document.createElement('span');
+        show.innerHTML = "show";
+        var container = document.getElementById('containerright');
+        container.appendChild(show);
+    });
+});
+console.log(chipit);
 document.querySelector('#dropit').addEventListener('dragover', function(e) {
     e.preventDefault(); // Annule l'interdiction de drop
 });
@@ -8,12 +19,12 @@ document.querySelector('#dropit').addEventListener('drop', function (e) {
     console.log(data);
     if (data == "titledrag") {
         var txt = document.createElement("li");
-        txt.innerHTML = "foo<h1><input type='text' /></h1>";
+        txt.innerHTML = "<h1><input id='TextIns' name='TextIns' value='' type='text'></h1>";
         $("#dropitdown").append(txt).fadeIn();
     }
     else if (data == "paradrag") {
         var txt2 = document.createElement('li');
-        txt2.innerHTML = "<p><input type='text' /></p>";
+        txt2.innerHTML = "<p><input asp-for='TextIns' /></p>";
         $("#dropitdown").append(txt2).fadeIn();
     }
 
@@ -32,6 +43,23 @@ function doit() {
     document.getElementById('stringHtml').value = htmlToString;
     var ekko = "";
 }
+//Tool to create scripts
+
+
+//Array.from(chipit).forEach(eve => {
+//    eve.addEventListener('onclick', function () {
+//        var show = document.createElement('span');
+//        show.innerHTML = "show";
+//        var container = document.getElementById('containerright');
+//        container.appendChild(show);
+//    });
+//});
+//function chipitup() {
+//    var show = document.createElement('span');
+//    show.innerHTML = "show";
+//    var container = document.getElementById('containerright');
+//    container.appendChild(show);
+//}
 
 //document.querySelectorAll('.dragit').addEventListener('dragstart', function (e) {
 //    e.preventDefault();

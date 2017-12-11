@@ -181,6 +181,15 @@ nav:hover .forAnimate {
 section {
     padding-left: 15px;
 }
+.chips {
+    display: inline-block;
+    padding: 0 25px;
+    height: 30px;
+    font-size: 15px;
+    line-height: 30px;
+    border-radius: 25px;
+    background-color: #f1f1f1;
+}
 
 /* Hide/rearrange for smaller screens */
 @media screen and (max-width: 767px) {

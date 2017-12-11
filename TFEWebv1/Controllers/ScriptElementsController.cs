@@ -150,5 +150,9 @@ namespace TFEWebv1.Controllers
         {
             return _context.ScriptElements.Any(e => e.Id == id);
         }
+        public async Task<IActionResult> ScriptMaker()
+        {
+            return View(await _context.ScriptElements.ToListAsync());
+        }
     }
 }

@@ -10,5 +10,6 @@ namespace TFEWebv1.Models.AdminViewModels
         public String Name { get; set; }
         public String Content { get; set; }
         public String Description { get; set; }
+        public String TextIns { get; set; }
     }
 }

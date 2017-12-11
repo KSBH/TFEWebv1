@@ -1,0 +1,19 @@
+@model IEnumerable<TFEWebv1.Models.ScriptElements>
+
+@{
+    ViewData["Title"] = "ScriptMaker";
+}
+
+<h2>ScriptMaker</h2>
+<div id="container" style="width:50%; margin-left:5%;">
+    <div class="row">
+        @foreach (var item in Model) {
+            <div class="chips" title="@item.Content" >
+                @Html.DisplayFor(modelItem => item.Name)
+                <input type="checkbox" />
+            </div>
+    }
+    </div>
+</div>
+<div id="containerright" style="float:right; margin-right:5%;">
+</div>
