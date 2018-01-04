@@ -1,0 +1,36 @@
+@model IEnumerable<TFEWebv1.Models.ScriptElements>
+
+@{
+    ViewData["Title"] = "ScriptMaker";
+}
+
+@*<a href="#" id="button">
+    <span>Powershell</span>
+</a>
+<a href="#" id="button">
+    <span>Bash</span>
+</a>*@
+<div class="myCont">
+    <div class="btnpower">
+        <a asp-controller="ScriptElements" asp-action="ScriptPwr"><span>Powershell</span></a>
+    </div>
+    <div class="btnbash">
+        <a asp-controller="ScriptElements" asp-action="ScriptSh"><span>Bash</span></a>
+    </div>
+</div>
+<div id="container" style="width:50%; margin-left:5%; height:50%">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="chips" title="@item.Content">
+                @Html.DisplayFor(modelItem => item.Name)
+                <input type="checkbox" />
+            </div>
+        }
+    </div>
+</div>
+<div>
+    <ul id="containerright">
+
+    </ul>
+</div>

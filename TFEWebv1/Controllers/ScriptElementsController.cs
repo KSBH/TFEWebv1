@@ -54,7 +54,7 @@ namespace TFEWebv1.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Content")] ScriptElements scriptElements)
+        public async Task<IActionResult> Create([Bind("Id,Name,Content,Type")] ScriptElements scriptElements)
         {
             if (ModelState.IsValid)
             {
@@ -149,6 +149,18 @@ namespace TFEWebv1.Controllers
         private bool ScriptElementsExists(Guid id)
         {
             return _context.ScriptElements.Any(e => e.Id == id);
+        }
+        public async Task<IActionResult> ScriptMaker()
+        {
+            return View(await _context.ScriptElements.ToListAsync());
+        }
+        public async Task<IActionResult> ScriptPwr()
+        {
+            return View(await _context.ScriptElements.Where(x => x.Type == 1).ToListAsync());
+        }
+        public async Task<IActionResult> ScriptSh()
+        {
+            return View(await _context.ScriptElements.Where(x => x.Type == 0).ToListAsync());
         }
     }
 }

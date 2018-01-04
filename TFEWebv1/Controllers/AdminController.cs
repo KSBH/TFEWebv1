@@ -46,12 +46,14 @@ namespace TFEWebv1.Controllers
                 string sub = html.Substring(startPos, length);
                 
             }
-            var x = vm.Content;
+            var content = vm.Content;
+            var insText = vm.TextIns;
+            var actualContent = content.Replace("<input id=\"TextIns\" name=\"TextIns\" value=\"\" type=\"text\">", insText);
             var article = new Articles
             {
                 Name = vm.Name,
                 Description = vm.Description,
-                Content = vm.Content
+                Content = actualContent
             };
             _context.Articles.Add(article);
             _context.SaveChanges();
