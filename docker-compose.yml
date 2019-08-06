@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  tfewebv1:
+    image: tfewebv1
+    build:
+      context: ./TFEWebv1
+      dockerfile: Dockerfile

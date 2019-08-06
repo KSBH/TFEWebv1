@@ -1,0 +1,15 @@
+networks:
+  default:
+    external:
+      name: nat
+services:
+  tfewebv1:
+    build:
+      context: C:\Users\V\source\repos\TFEWebv1\TFEWebv1
+      dockerfile: Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+    image: tfewebv1
+    ports:
+    - 80/tcp
+version: '3.0'
